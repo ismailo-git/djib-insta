@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hello
+{% endblock %}
+
+{% block body %}
+	<h2>Hello page</h2>
+	<div>
+		<ul>
+			{% for message in messages|slice(0, limit) %}
+				<li>{{message.created}}</li>
+				{{ include('hello/_message.html.twig') }}
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
