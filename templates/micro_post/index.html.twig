@@ -9,8 +9,7 @@
 		<div>
 			{% for post in posts %}
 
-				<a href="{{path('micro_post_show', {post: post.id})}}">
-
+				<a id="yahou" href="{{path('micro_post_show', {post: post.id})}}">
 
 					<h2>{{post.title}}</h2>
 				</a>

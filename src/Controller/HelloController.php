@@ -8,21 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HelloController extends AbstractController
 {
-	private array $messages = [
 
-		['message' => 'Hello', 'created' => '2022/10/13'],
-		['message' => 'Hi', 'created' => '2022/08/13'],
-		['message' => 'Bye!', 'created' => '2021/05/13']
-	];
 
 	#[Route('/{limit<\d+>?3}', name: "app_home")]
-	public function index(int $limit): Response
+	public function index(): Response
 	{
-		return $this->render('hello/index.html.twig', [
-
-			'messages' => $this->messages,
-			'limit' => $limit
-		]);
+		return $this->render('hello/index.html.twig');
 	}
 
 	#[Route('/messages/{id<\d+>}', name: 'app_show')]
